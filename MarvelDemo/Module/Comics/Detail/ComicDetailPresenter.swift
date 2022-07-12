@@ -18,7 +18,7 @@ class ComicDetailPresenter: ComicDetailPresentationLogic {
     var view: ComicDetailDisplayLogic?
     
     func presentDetail(detail: ComicDetail.Response.ComicDetail) {
-        
+        view?.displayDetail(detail: ComicDetail.ViewModel.ComicDetailViewModel(response: detail))
     }
     
     func presentFailure(error: RequestError) {

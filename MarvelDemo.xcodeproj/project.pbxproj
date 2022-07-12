@@ -27,6 +27,10 @@
 		741CB03B287C798300EBE13E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 741CB03A287C798300EBE13E /* Constants.swift */; };
 		741CB03F287DBC7F00EBE13E /* ComicHomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 741CB03E287DBC7F00EBE13E /* ComicHomeCell.swift */; };
 		741CB041287DF60200EBE13E /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 741CB040287DF60200EBE13E /* Extensions.swift */; };
+		741CB045287E3F1100EBE13E /* findComicID.json in Resources */ = {isa = PBXBuildFile; fileRef = 741CB043287E3F1100EBE13E /* findComicID.json */; };
+		741CB046287E3F1100EBE13E /* getComics.json in Resources */ = {isa = PBXBuildFile; fileRef = 741CB044287E3F1100EBE13E /* getComics.json */; };
+		741CB047287E407100EBE13E /* getComics.json in Resources */ = {isa = PBXBuildFile; fileRef = 741CB044287E3F1100EBE13E /* getComics.json */; };
+		741CB048287E407400EBE13E /* findComicID.json in Resources */ = {isa = PBXBuildFile; fileRef = 741CB043287E3F1100EBE13E /* findComicID.json */; };
 		74C808E8287B67490035994A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C808E7287B67490035994A /* AppDelegate.swift */; };
 		74C808F1287B674A0035994A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74C808F0287B674A0035994A /* Assets.xcassets */; };
 		74C808F4287B674A0035994A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74C808F2287B674A0035994A /* LaunchScreen.storyboard */; };
@@ -64,6 +68,8 @@
 		741CB03A287C798300EBE13E /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		741CB03E287DBC7F00EBE13E /* ComicHomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicHomeCell.swift; sourceTree = "<group>"; };
 		741CB040287DF60200EBE13E /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		741CB043287E3F1100EBE13E /* findComicID.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = findComicID.json; sourceTree = "<group>"; };
+		741CB044287E3F1100EBE13E /* getComics.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = getComics.json; sourceTree = "<group>"; };
 		74C808E4287B67490035994A /* MarvelDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarvelDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		74C808E7287B67490035994A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		74C808F0287B674A0035994A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -116,6 +122,7 @@
 		741CB02B287BF5F500EBE13E /* MarvelDemoTests */ = {
 			isa = PBXGroup;
 			children = (
+				741CB042287E3E6600EBE13E /* Resources */,
 				741CB02C287BF5F500EBE13E /* MarvelDemoTests.swift */,
 			);
 			path = MarvelDemoTests;
@@ -135,6 +142,15 @@
 				741CB03E287DBC7F00EBE13E /* ComicHomeCell.swift */,
 			);
 			path = Comic;
+			sourceTree = "<group>";
+		};
+		741CB042287E3E6600EBE13E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				741CB043287E3F1100EBE13E /* findComicID.json */,
+				741CB044287E3F1100EBE13E /* getComics.json */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		74C808DB287B67490035994A = {
@@ -290,6 +306,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				741CB046287E3F1100EBE13E /* getComics.json in Resources */,
+				741CB045287E3F1100EBE13E /* findComicID.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,7 +316,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				74C808F4287B674A0035994A /* LaunchScreen.storyboard in Resources */,
+				741CB048287E407400EBE13E /* findComicID.json in Resources */,
 				74C808F1287B674A0035994A /* Assets.xcassets in Resources */,
+				741CB047287E407100EBE13E /* getComics.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

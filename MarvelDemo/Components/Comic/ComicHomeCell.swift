@@ -22,7 +22,7 @@ class ComicHomeCell: UITableViewCell {
     var titleLbl: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 17.0, weight: .bold)
-        label.textColor = .darkGray
+        label.textColor = .white
         label.numberOfLines = 2
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -31,7 +31,7 @@ class ComicHomeCell: UITableViewCell {
     var descriptionLbl: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 14.0, weight: .light)
-        label.textColor = .lightGray
+        label.textColor = .white
         label.numberOfLines = 2
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -65,6 +65,7 @@ class ComicHomeCell: UITableViewCell {
     }
     
     func setupView() {
+        self.contentView.backgroundColor = .darkGray
         self.contentView.addSubview(frontpageImgView)
         self.contentView.addSubview(titleLbl)
         self.contentView.addSubview(descriptionLbl)

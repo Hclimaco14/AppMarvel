@@ -20,6 +20,8 @@ class ComicHomeViewController: UIViewController {
     // MARK: - Outlets
     var tableView: UITableView = {
         let table = UITableView()
+        table.backgroundColor = .darkGray
+        table.showsVerticalScrollIndicator = false
         table.translatesAutoresizingMaskIntoConstraints = false
         return table
     }()
@@ -73,6 +75,7 @@ class ComicHomeViewController: UIViewController {
     
     fileprivate func setupComponens() {
         self.title = "Comics"
+        self.view.backgroundColor = .darkGray
         self.view.addSubview(tableView)
         self.tableView.register(ComicHomeCell.self, forCellReuseIdentifier: ComicHomeCell.identifier)
         self.tableView.dataSource = self

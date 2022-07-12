@@ -10,10 +10,11 @@ import UIKit
 
 enum ComicDetail {
     
-    struct Request {
+    public struct Request {
         var idComic: Int
     }
-    struct Response {
+    
+    public struct Response {
         
         // MARK: - ComicDetail
         struct ComicDetail: Codable {
@@ -111,7 +112,45 @@ enum ComicDetail {
         }
         
     }
-    struct ViewModel {
+    
+    public struct ViewModel {
+        
+        struct ComicDetailViewModel {
+            var title: String?
+            var thumbnail: String?
+            var publisher: String?
+            var comicDescription: String?
+            var detailComic: ComicDetail.Response.ComicDetail
+            
+            public init() {
+                self.title = ""
+                self.thumbnail = ""
+                self.publisher = ""
+                self.comicDescription = ""
+                self.detailComic = ComicDetail.Response.ComicDetail()
+            }
+            
+            public init(response: ComicDetail.Response.ComicDetail ){
+                self.title = response.data?.results?.first?.title ?? ""
+                self.thumbnail = ComicDetail.ViewModel.thumbnailURL(thumbnail:  response.data?.results?.first?.thumbnail)
+                
+                self.publisher = response.data?.results?.first?.dates?.filter({ $0.type == "onsaleDate"}).first?.date
+                self.comicDescription = response.data?.results?.first?.resultDescription
+                self.detailComic = response ?? ComicDetail.Response.ComicDetail()
+                
+            }
+            
+        }
+        
+        static func thumbnailURL(thumbnail: ComicDetail.Response.Thumbnail?) -> String? {
+            if let path = thumbnail?.path,let ext = thumbnail?.thumbnailExtension{
+                return path + "." + ext
+            } else {
+                return nil
+            }
+        }
+        
+        
         
     }
     

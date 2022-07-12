@@ -39,11 +39,25 @@ extension UIImageView {
                 if let image = UIImage(data: data!) {
                     imageCache.setObject(image, forKey: urlString as NSString)
                     self.image = image
-                    self.contentMode = .scaleAspectFill
+                    self.contentMode = .scaleAspectFit
                     activityIndicator.removeFromSuperview()
                 }
             }
 
         }).resume()
     }
+    
+}
+
+extension UIView {
+    func addBlurEffect() {
+        DispatchQueue.main.async {
+          let blurEffect = UIBlurEffect(style: .light)
+          let blurEffectView = UIVisualEffectView(effect: blurEffect)
+          blurEffectView.frame = self.bounds
+
+          blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight] // for supporting device rotation
+          self.addSubview(blurEffectView)
+        }
+      }
 }

@@ -10,15 +10,15 @@
 import UIKit
 
 protocol ComicDetailRoutingLogic {
-    func routeToSomewhere()
+    func backToHome()
 }
 
 class ComicDetailRouter: ComicDetailRoutingLogic {
     
     var view: ComicDetailViewController?
     
-    func routeToSomewhere() {
-        
+    func backToHome() {
+        self.view?.navigationController?.popViewController(animated: true)
     }
     
 }

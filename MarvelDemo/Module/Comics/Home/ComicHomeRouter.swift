@@ -18,6 +18,7 @@ class ComicHomeRouter: ComicHomeRoutingLogic {
     
     func goToDetail(item : ComicHome.ViewModel.Comics.ComicItem) {
         let vc  = ComicDetailViewController()
+        vc.item = item
         self.view?.navigationController?.pushViewController(vc, animated: true)
     }
 }

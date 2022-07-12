@@ -6,6 +6,7 @@
 //
 
 import XCTest
+@testable import MarvelDemo
 
 class MarvelDemoTests: XCTestCase {
 
@@ -17,18 +18,39 @@ class MarvelDemoTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
+    func testComicsResponse() {
+        
+        let worker = ComicHomeWorker(serviceManager: MockServiceManager(nameFile: "getComics"))
+        
+        worker.getComics { result in
+            switch result {
+            case .success(let response):
+                XCTAssert(true, "Test for worker succes \(response)")
+                break
+            case .failure(let error):
+                
+                XCTAssert(false, "Test for worker fail \(error.description)")
+                break
+            }
+        }
+        
     }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        measure {
-            // Put the code you want to measure the time of here.
+    
+    func testComicsById() {
+        
+        let request =  ComicDetail.Request(idComic: 3)
+        let worker = ComicDetailWorker(serviceManager: MockServiceManager(nameFile: "findComicID"))
+        
+        worker.getComic(request: request) { result in
+            switch result {
+            case .success(let response):
+                XCTAssert(true, "Test for worker succes \(response)")
+                break
+            case .failure(let error):
+                
+                XCTAssert(false, "Test for worker fail \(error.description)")
+                break
+            }
         }
     }
 
